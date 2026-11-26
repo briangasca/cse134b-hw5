@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Brian Gasca Portfolio</title>
+    <link rel="icon" href="portrait.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="styles/shared_style.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <script src="theme.js"></script>
+</head>
+<body>
+    <header>
+        <p><b>Brian Gasca</b></p>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="resume.pdf" target="_blank">Resume</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="form-no-js.html">Contact (No JS)</a></li>
+                <li><a href="form-with-js.html">Contact (JS)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <h1>Projects</h1>
+        <p>My projects include tools for studying, campus IT scheduling, and coordinating deliveries. Each entry describes what the application does, the technologies involved, and my contribution.</p>
+        <dialog open>
+            <p>These entries are summaries, view the whole projects on <a href="https://github.com/briangasca">GitHub!</a>.</p>
+            <form method="dialog">
+                <button>Dismiss</button>
+            </form>
+        </dialog>
+
+        <project-entry>
+            <article>
+                <header>
+                    <h2>Axon — Flashcard Study App</h2>
+                    <p>January 2026 – Present</p>
+                </header>
+                <p>A flashcard study platform with deck creation, recall-tracked study sessions, quiz generation, and community sharing.</p>
+                <p><b>Technologies:</b> React, Node.js, Express, MySQL, Tailwind CSS, JWT</p>
+                <h3>My contribution</h3>
+                <ul>
+                    <li>Built and deployed the full-stack application with a React/Vite frontend and Express API.</li>
+                    <li>Implemented JWT authentication and a normalized MySQL database schema.</li>
+                    <li>Set up GitHub Actions to run lint and automated tests on pull requests, with branch protection and deployment to Railway on merge.</li>
+                </ul>
+            </article>
+            <img src="icons/axon-img.png" alt="Screenshot of the Axon flashcard study app">
+        </project-entry>
+
+        <project-entry>
+            <article>
+                <header>
+                    <h2>Chronos — Service Desk Scheduling</h2>
+                    <p>June 2025 – January 2026</p>
+                </header>
+                <p>A scheduling and timesheet application used by campus IT employees to manage their work schedules and submit timesheets.</p>
+                <p><b>Technologies:</b> React, Node.js, Express, MariaDB</p>
+                <h3>My contribution</h3>
+                <ul>
+                    <li>Shipped the application for daily use by more than 70 IT employees.</li>
+                    <li>Developed a responsive React frontend with dynamic tables, role-based views, and API-driven updates.</li>
+                </ul>
+            </article>
+            <img src="icons/chronos-img.png" alt="Screenshot of the Chronos service desk scheduling app">
+        </project-entry>
+
+        <project-entry>
+            <article>
+                <header>
+                    <h2>UCSDelivery — Campus Delivery App</h2>
+                    <p>September 2025 – January 2026</p>
+                </header>
+                <p>A campus delivery platform that coordinates deliverers and provides real-time, map-based order tracking.</p>
+                <p><b>Technologies:</b> React, Express, MariaDB, Discord bot integration</p>
+                <h3>My contribution</h3>
+                <ul>
+                    <li>Led development through ACM UCSD, mentoring six developers with code reviews and technical direction.</li>
+                    <li>Integrated a Discord bot and real-time order tracking to coordinate deliveries.</li>
+                </ul>
+            </article>
+        </project-entry>
+    </main>
+
+    
+    <hello-world></hello-world>
+    <noscript>
+        <p>The Hello World console message needs JavaScript, but it's turned off.</p>
+    </noscript>
+    <script>
+        class HelloWorld extends HTMLElement {
+            connectedCallback() {
+                console.log("Hello World!");
+            }
+        }
+
+        customElements.define("hello-world", HelloWorld);
+    </script>
+
+    <footer>
+        <address>
+            Brian Gasca
+            <br>
+            Computer Science, UC San Diego
+        </address>
+    </footer>
+</body>
+</html>

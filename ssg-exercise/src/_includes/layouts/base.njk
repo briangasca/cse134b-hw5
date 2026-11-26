@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="icon" href="/portrait.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="/styles/shared_style.css">
+    {%- for sheet in stylesheets %}
+    <link rel="stylesheet" href="/styles/{{ sheet }}">
+    {%- endfor %}
+    <script src="/theme.js"></script>
+    {%- for script in scripts %}
+    <script src="/{{ script }}" defer></script>
+    {%- endfor %}
+</head>
+<body>
+    <header>
+        <p><b>Brian Gasca</b></p>
+        <nav>
+            <ul class="navbar">
+                <li><a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a></li>
+                <li><a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a></li>
+                <li><a href="/resume.pdf" target="_blank">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+{{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+</body>
+</html>

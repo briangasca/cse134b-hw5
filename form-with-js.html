@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form With JS</title>
+    <link rel="stylesheet" href="styles/shared_style.css">
+    <link rel="stylesheet" href="styles/form-no-js.css">
+    <script src="theme.js"></script>
+    <script src="form.js" defer></script>
+</head>
+<body>
+    <header>
+        <p><b>Brian Gasca</b></p>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.pdf" target="_blank">Resume</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="form-no-js.html">Contact (No JS)</a></li>
+                <li><a href="form-with-js.html" aria-current="page">Contact (JS)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Contact</h1>
+
+    <form method="POST" action="https://httpbin.org/post">
+        <p>All fields are required. Name can be 1 to 100 characters. Comments must be 10 to 1,000 characters so there is enough detail to respond to.</p>
+
+        <div>
+            <label for="name_input">Name (required):</label>
+            <input type="text" id="name_input" name="name" autocomplete="name" required minlength="1" maxlength="100" aria-describedby="name_hint name_error">
+            <small id="name_hint">1 to 100 characters. Any characters are allowed.</small>
+        </div>
+
+        <div>
+            <label for="email_input">Email (required):</label>
+            <input type="email" id="email_input" name="email" autocomplete="email" required aria-describedby="email_hint email_error">
+            <small id="email_hint">Use the format name@example.com.</small>
+        </div>
+
+        <div>
+            <label for="comments_input">Comments (required, 10 to 1,000 characters):</label>
+            <textarea id="comments_input" name="comments" required minlength="10" maxlength="1000" aria-describedby="comments_hint comments_error info_area"></textarea>
+            <small id="comments_hint">At least 10 characters so there is enough detail to respond to.</small>
+        </div>
+
+        <!-- JavaScript-only areas: hidden until form.js shows them -->
+        <div id="error_area" role="status" aria-live="polite" hidden>
+            <ul>
+                <li id="name_error" hidden></li>
+                <li id="email_error" hidden></li>
+                <li id="comments_error" hidden></li>
+            </ul>
+        </div>
+
+        <div id="info_area" hidden></div>
+
+        <input type="hidden" name="possible_bot" value="true">
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

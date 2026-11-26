@@ -1,0 +1,134 @@
+.fact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+fact-box {
+    display: block;
+    color: var(--fact-box-text, #111111);
+    background-color: var(--fact-box-bg, #ffffff);
+    border: 2px solid var(--fact-box-border, #767676);
+    border-radius: 15px;
+    padding: 1rem 1.5rem;
+}
+
+fact-box .fact-request {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+fact-box select {
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--fact-box-text, #111111);
+    background-color: var(--fact-box-bg, #ffffff);
+    border: 1px solid var(--fact-box-border, #767676);
+    border-radius: 8px;
+    padding: 0.25rem 0.5rem;
+}
+
+fact-box select:focus-visible,
+fact-box button:focus-visible,
+fact-box a:focus-visible {
+    outline: 2px solid var(--fact-box-focus, #111111);
+    outline-offset: 2px;
+}
+
+fact-box .fact-text {
+    font-size: 1.15rem;
+    margin: 1rem 0 0.25rem;
+}
+
+fact-box .fact-details {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+fact-box .fact-details::first-letter {
+    text-transform: uppercase;
+}
+
+fact-box button:disabled,
+fact-box select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+fact-box .fact-status.is-error {
+    color: var(--fact-box-error, #b3261e);
+}
+
+fact-box .fact-retry {
+    margin-top: 0.5rem;
+}
+
+fact-box[compact] {
+    border-style: dashed;
+}
+
+fact-box .fact-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+fact-box .fact-status {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+fact-box a {
+    color: var(--fact-box-link, #0b57d0);
+}
+
+fact-box button {
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--fact-box-text, #111111);
+    background-color: transparent;
+    border: 1px solid var(--fact-box-border, #767676);
+    border-radius: 1000px;
+    padding: 0.3rem 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+fact-box button:hover {
+    background-color: var(--fact-box-hover, rgba(0, 0, 0, 0.1));
+}
+
+.fact-toggle {
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 1000px;
+    padding: 0.3rem 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.fact-toggle:hover {
+    background-color: var(--hover-bg);
+}
+
+.fact-toggle {
+    align-self: flex-start;
+}
+
+.fact-toggle[aria-pressed="true"] {
+    color: var(--text-color-alt);
+    background-color: var(--bg-color-alt);
+}
+
+fact-box button[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: progress;
+}

@@ -1,0 +1,150 @@
+:root {
+    /* colors */
+    --bg-color: #0d0d0d;
+    --bg-color-alt: rgb(255,255,255);
+    --text-color: white;
+    --text-color-alt: black;
+    --border-color: rgba(255, 255, 255, 0.726);
+    --border-strong: rgba(255, 255, 255, 0.8);
+    --hover-bg: rgba(255, 255, 255, 0.15);
+    --hover-bg-alt: rgba(255, 255, 255, 0.623);
+    --link-color: #8ab4f8;
+    --error-color: #ff6b6b;
+    --valid-color: #5fd68a;
+    --warn-color: #ffc857;
+    --panel-bg: #1a1a1a;
+
+    /* font with fallbacks*/
+    --font-stack: system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    /* dark is the default theme */
+    color-scheme: dark;
+}
+
+/* light theme vars */
+:root.light {
+    --bg-color: #ffffff;
+    --bg-color-alt: #111111;
+    --text-color: #111111;
+    --text-color-alt: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.6);
+    --border-strong: rgba(0, 0, 0, 0.85);
+    --hover-bg: rgba(0, 0, 0, 0.1);
+    --hover-bg-alt: rgba(0, 0, 0, 0.7);
+    --link-color: #0b57d0;
+    --error-color: #b3261e;
+    --valid-color: #1b7f3b;
+    --warn-color: #8a5a00;
+    --panel-bg: #f3f4f6;
+
+    color-scheme: light;
+}
+
+a {
+    color: var(--link-color);
+}
+
+fact-box {
+    --fact-box-bg: var(--panel-bg, #1a1a1a);
+    --fact-box-text: var(--text-color, white);
+    --fact-box-border: var(--border-color, rgba(255, 255, 255, 0.7));
+    --fact-box-focus: var(--border-strong, white);
+    --fact-box-link: var(--link-color, #8ab4f8);
+    --fact-box-error: var(--error-color, #ff6b6b);
+    --fact-box-hover: var(--hover-bg, rgba(255, 255, 255, 0.15));
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--border-strong);
+    outline-offset: 2px;
+}
+
+.theme-toggle {
+    margin-left: auto;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 1000px;
+    padding: 0.3rem 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-bg);
+}
+
+body {
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: auto;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+header {
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+    padding: 1rem;
+    margin: 0;
+    gap: 1rem;
+}
+
+/* targetting the Brian Gasca part on the navbar */
+header > p {
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+    padding: 0 1rem;
+    margin: 0;
+    gap: 0.5rem;
+}
+
+.navbar a[aria-current="page"] {
+    outline: 2px solid var(--border-strong);
+}
+
+/* targetting the links in the navbar */
+.navbar > li > a {
+    display: flex;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 1000px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar > li > a:hover {
+    background-color: var(--hover-bg);
+}
+
+/* shared main */
+main {
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+/* no view transition animation for users who ask for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none;
+    }
+}

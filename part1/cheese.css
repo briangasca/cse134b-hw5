@@ -1,0 +1,64 @@
+/* Brian Gasca https://github.com/briangasca/cse134b-hw3 */
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: black;
+    line-height: normal;
+
+    margin: auto;
+    max-width: 1600px;
+    padding: 1.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.latin {
+    font-style: italic;
+}
+
+#warning {
+    background-color: rgb(252, 165, 165);
+}
+
+blockquote {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+a:hover {
+    color: rgb(118, 118, 250);
+}
+
+a:focus {
+    color:brown;
+}
+
+input:focus {
+    outline: 2px solid red;
+}
+
+button:focus {
+    outline: 2px solid rgb(116, 202, 231);
+}
+
+/* These both have an effect on the p tag,
+but black ends up winning since it was declared
+later in the css file, similar to how you can't
+run functions that weren't declared on previous lines
+in some programming languages. */
+
+p {
+    color: red;
+}
+
+p {
+    color: black;
+}

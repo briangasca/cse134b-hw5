@@ -1,0 +1,128 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+}
+
+form label {
+    font-weight: 500;
+}
+
+form input,
+form textarea {
+    color: var(--text-color);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+form textarea {
+    min-height: 6rem;
+    resize: vertical;
+}
+
+form > p {
+    margin: 0;
+}
+
+form input:required,
+form textarea:required {
+    box-shadow: inset 3px 0 0 var(--border-strong);
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid var(--border-strong);
+    outline-offset: 2px;
+}
+
+
+form input:user-invalid,
+form textarea:user-invalid {
+    border-style: dashed;
+    border-color: var(--error-color);
+    box-shadow: inset 3px 0 0 var(--error-color);
+}
+
+form input:user-valid,
+form textarea:user-valid {
+    border-style: solid;
+    border-color: var(--valid-color);
+    box-shadow: inset 3px 0 0 var(--valid-color);
+}
+
+form button {
+    align-self: flex-end;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-color-alt);
+    background-color: var(--bg-color-alt);
+    border: none;
+    border-radius: 1000px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+form button:hover {
+    background-color: var(--hover-bg-alt);
+}
+
+/* field hint text under each control */
+form small {
+    font-size: 0.875rem;
+}
+
+#error_area {
+    min-height: 4.5rem;
+}
+
+#error_area ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+
+#error_area li {
+    font-weight: 700;
+    color: var(--error-color);
+}
+
+#error_area li::marker {
+    content: "\26A0  ";
+}
+
+#info_area {
+    min-height: 1.6em;
+}
+
+/* near the character limit*/
+#info_area.near-limit {
+    font-weight: 700;
+    color: var(--warn-color);
+    border-left: 4px solid var(--warn-color);
+    padding-left: 0.5rem;
+}
+
+/* at the limit */
+#info_area.at-limit {
+    font-weight: 700;
+    color: var(--warn-color);
+    border-left: 4px double var(--warn-color);
+    padding-left: 0.5rem;
+}

@@ -1,0 +1,25 @@
+/* custom element #1*/
+project-entry {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1.5rem;
+    align-items: start;
+    margin-block: 2rem;
+    padding-block-end: 1rem;
+    border-block-end: 1px solid;
+}
+
+/* targets the images that display the project screenshots */
+project-entry > img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* if user is on phone */
+
+@media (max-width: 700px) {
+    project-entry {
+        grid-template-columns: 1fr;
+    }
+}
